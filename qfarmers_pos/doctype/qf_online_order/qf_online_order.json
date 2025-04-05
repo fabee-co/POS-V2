@@ -1,0 +1,164 @@
+{
+    "doctype": "DocType",
+    "name": "QF Online Order",
+    "owner": "Administrator",
+    "module": "QFarmers POS",
+    "custom": 1,
+    "autoname": "field:order_id",
+    "allow_rename": 0,
+    "engine": "InnoDB",
+    "fields": [
+        {
+            "fieldname": "order_id",
+            "fieldtype": "Data",
+            "label": "Order ID",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "customer",
+            "fieldtype": "Link",
+            "label": "Customer",
+            "options": "Customer",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "order_date",
+            "fieldtype": "Datetime",
+            "label": "Order Date",
+            "reqd": 1,
+            "default": "now",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Draft\nPending\nProcessing\nPacked\nShipped\nDelivered\nCancelled",
+            "reqd": 1,
+            "default": "Draft",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "order_details_section",
+            "fieldtype": "Section Break",
+            "label": "Order Details"
+        },
+        {
+            "fieldname": "order_items",
+            "fieldtype": "Table",
+            "label": "Order Items",
+            "options": "QF Online Order Item",
+            "reqd": 1
+        },
+        {
+            "fieldname": "total_amount",
+            "fieldtype": "Currency",
+            "label": "Total Amount",
+            "read_only": 1
+        },
+        {
+            "fieldname": "delivery_section",
+            "fieldtype": "Section Break",
+            "label": "Delivery Details"
+        },
+        {
+            "fieldname": "delivery_address",
+            "fieldtype": "Link",
+            "label": "Delivery Address",
+            "options": "Address",
+            "reqd": 1
+        },
+        {
+            "fieldname": "delivery_date",
+            "fieldtype": "Date",
+            "label": "Delivery Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "delivery_time_slot",
+            "fieldtype": "Select",
+            "label": "Delivery Time Slot",
+            "options": "Morning (8AM-12PM)\nAfternoon (12PM-4PM)\nEvening (4PM-8PM)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "delivery_notes",
+            "fieldtype": "Small Text",
+            "label": "Delivery Notes"
+        },
+        {
+            "fieldname": "payment_section",
+            "fieldtype": "Section Break",
+            "label": "Payment Details"
+        },
+        {
+            "fieldname": "payment_method",
+            "fieldtype": "Select",
+            "label": "Payment Method",
+            "options": "Cash on Delivery\nCredit Card\nDebit Card\nUPI\nWallet\nBank Transfer",
+            "reqd": 1
+        },
+        {
+            "fieldname": "payment_status",
+            "fieldtype": "Select",
+            "label": "Payment Status",
+            "options": "Pending\nPaid\nFailed\nRefunded",
+            "reqd": 1,
+            "default": "Pending"
+        },
+        {
+            "fieldname": "transaction_id",
+            "fieldtype": "Data",
+            "label": "Transaction ID"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 0,
+            "cancel": 0,
+            "amend": 0
+        },
+        {
+            "role": "QFarmers Store Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 0,
+            "submit": 0,
+            "cancel": 0,
+            "amend": 0
+        }
+    ],
+    "creation": "2025-04-05 14:46:00",
+    "modified": "2025-04-05 14:46:00",
+    "modified_by": "Administrator",
+    "idx": 0,
+    "is_submittable": 0,
+    "istable": 0,
+    "editable_grid": 1,
+    "track_changes": 1,
+    "track_seen": 0,
+    "quick_entry": 0,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "max_attachments": 0,
+    "hide_toolbar": 0,
+    "allow_copy": 0,
+    "allow_import": 1,
+    "allow_events_in_timeline": 1,
+    "allow_auto_repeat": 0,
+    "show_name_in_global_search": 1,
+    "show_preview_popup": 0
+}

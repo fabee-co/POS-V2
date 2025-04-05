@@ -1,0 +1,161 @@
+{
+    "doctype": "DocType",
+    "name": "QF Subscription",
+    "owner": "Administrator",
+    "module": "QFarmers POS",
+    "custom": 1,
+    "autoname": "field:subscription_id",
+    "allow_rename": 1,
+    "engine": "InnoDB",
+    "fields": [
+        {
+            "fieldname": "subscription_id",
+            "fieldtype": "Data",
+            "label": "Subscription ID",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "customer",
+            "fieldtype": "Link",
+            "label": "Customer",
+            "options": "Customer",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Active\nPaused\nCancelled\nExpired\nPending",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "subscription_details_section",
+            "fieldtype": "Section Break",
+            "label": "Subscription Details"
+        },
+        {
+            "fieldname": "start_date",
+            "fieldtype": "Date",
+            "label": "Start Date",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "next_delivery_date",
+            "fieldtype": "Date",
+            "label": "Next Delivery Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "frequency",
+            "fieldtype": "Select",
+            "label": "Frequency",
+            "options": "Daily\nWeekly\nBi-Weekly\nMonthly",
+            "reqd": 1
+        },
+        {
+            "fieldname": "delivery_address",
+            "fieldtype": "Link",
+            "label": "Delivery Address",
+            "options": "Address",
+            "reqd": 1
+        },
+        {
+            "fieldname": "delivery_time_slot",
+            "fieldtype": "Select",
+            "label": "Delivery Time Slot",
+            "options": "Morning (8AM-12PM)\nAfternoon (12PM-4PM)\nEvening (4PM-8PM)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "price",
+            "fieldtype": "Currency",
+            "label": "Subscription Price",
+            "reqd": 1
+        },
+        {
+            "fieldname": "auto_renew",
+            "fieldtype": "Check",
+            "label": "Auto Renew",
+            "default": 1
+        },
+        {
+            "fieldname": "end_date",
+            "fieldtype": "Date",
+            "label": "End Date",
+            "depends_on": "eval:doc.auto_renew==0"
+        },
+        {
+            "fieldname": "subscription_items_section",
+            "fieldtype": "Section Break",
+            "label": "Subscription Items"
+        },
+        {
+            "fieldname": "subscription_items",
+            "fieldtype": "Table",
+            "label": "Subscription Items",
+            "options": "QF Subscription Item",
+            "reqd": 1
+        },
+        {
+            "fieldname": "notes_section",
+            "fieldtype": "Section Break",
+            "label": "Notes"
+        },
+        {
+            "fieldname": "notes",
+            "fieldtype": "Text Editor",
+            "label": "Notes"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 0,
+            "cancel": 0,
+            "amend": 0
+        },
+        {
+            "role": "QFarmers Store Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 0,
+            "submit": 0,
+            "cancel": 0,
+            "amend": 0
+        }
+    ],
+    "creation": "2025-04-05 12:34:30",
+    "modified": "2025-04-05 14:38:36",
+    "modified_by": "Administrator",
+    "idx": 0,
+    "is_submittable": 0,
+    "istable": 0,
+    "editable_grid": 1,
+    "track_changes": 1,
+    "track_seen": 0,
+    "quick_entry": 0,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "max_attachments": 0,
+    "hide_toolbar": 0,
+    "allow_copy": 0,
+    "allow_import": 1,
+    "allow_events_in_timeline": 0,
+    "allow_auto_repeat": 0,
+    "show_name_in_global_search": 0,
+    "show_preview_popup": 0
+}

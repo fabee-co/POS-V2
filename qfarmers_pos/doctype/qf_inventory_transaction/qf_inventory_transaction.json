@@ -1,0 +1,144 @@
+{
+    "doctype": "DocType",
+    "name": "QF Inventory Transaction",
+    "owner": "Administrator",
+    "module": "QFarmers POS",
+    "custom": 1,
+    "autoname": "field:transaction_id",
+    "allow_rename": 0,
+    "engine": "InnoDB",
+    "fields": [
+        {
+            "fieldname": "transaction_id",
+            "fieldtype": "Data",
+            "label": "Transaction ID",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "transaction_type",
+            "fieldtype": "Select",
+            "label": "Transaction Type",
+            "options": "Inward\nOutward\nAdjustment\nTransfer\nWastage\nExpiry",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "batch_id",
+            "fieldtype": "Link",
+            "label": "Batch ID",
+            "options": "QF Inventory Batch",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "item_code",
+            "fieldtype": "Link",
+            "label": "Item Code",
+            "options": "Item",
+            "reqd": 1
+        },
+        {
+            "fieldname": "transaction_details_section",
+            "fieldtype": "Section Break",
+            "label": "Transaction Details"
+        },
+        {
+            "fieldname": "quantity",
+            "fieldtype": "Float",
+            "label": "Quantity",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "uom",
+            "fieldtype": "Link",
+            "label": "UOM",
+            "options": "UOM",
+            "fetch_from": "item_code.stock_uom",
+            "reqd": 1
+        },
+        {
+            "fieldname": "transaction_date",
+            "fieldtype": "Datetime",
+            "label": "Transaction Date",
+            "reqd": 1,
+            "default": "now"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "warehouse",
+            "fieldtype": "Link",
+            "label": "Warehouse",
+            "options": "Warehouse",
+            "reqd": 1
+        },
+        {
+            "fieldname": "reference_section",
+            "fieldtype": "Section Break",
+            "label": "Reference"
+        },
+        {
+            "fieldname": "reference_type",
+            "fieldtype": "Select",
+            "label": "Reference Type",
+            "options": "Purchase Receipt\nSales Invoice\nStock Entry\nPOS Invoice\nQF Online Order\nManual Adjustment\nSubscription Order"
+        },
+        {
+            "fieldname": "reference_id",
+            "fieldtype": "Data",
+            "label": "Reference ID"
+        },
+        {
+            "fieldname": "notes",
+            "fieldtype": "Small Text",
+            "label": "Notes"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 0,
+            "cancel": 0,
+            "amend": 0
+        },
+        {
+            "role": "QFarmers Inventory Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 0,
+            "submit": 0,
+            "cancel": 0,
+            "amend": 0
+        }
+    ],
+    "creation": "2025-04-05 14:42:15",
+    "modified": "2025-04-05 14:42:15",
+    "modified_by": "Administrator",
+    "idx": 0,
+    "is_submittable": 0,
+    "istable": 0,
+    "editable_grid": 1,
+    "track_changes": 1,
+    "track_seen": 0,
+    "quick_entry": 0,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "max_attachments": 0,
+    "hide_toolbar": 0,
+    "allow_copy": 0,
+    "allow_import": 1,
+    "allow_events_in_timeline": 0,
+    "allow_auto_repeat": 0,
+    "show_name_in_global_search": 0,
+    "show_preview_popup": 0
+}

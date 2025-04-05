@@ -1,0 +1,268 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:source_name",
+ "creation": "2025-04-05 10:16:30",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "source_name",
+  "source_type",
+  "contact_details_section",
+  "contact_person",
+  "phone",
+  "email",
+  "column_break_7",
+  "address",
+  "city",
+  "state",
+  "pin_code",
+  "source_details_section",
+  "farm_size",
+  "distance_from_store",
+  "lead_time_days",
+  "column_break_15",
+  "organic_certified",
+  "certification_details",
+  "preferred_supplier",
+  "supplier_rating",
+  "produce_section",
+  "produce_items",
+  "seasonal_availability_section",
+  "available_from_month",
+  "available_to_month",
+  "seasonal_notes",
+  "additional_information_section",
+  "sustainability_practices",
+  "notes",
+  "attachments"
+ ],
+ "fields": [
+  {
+   "fieldname": "source_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Source Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "source_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Source Type",
+   "options": "Local Farm\nFarmers Cooperative\nWholesale Market\nDistributor\nImport\nOwn Farm",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pin_code",
+   "fieldtype": "Data",
+   "label": "PIN Code"
+  },
+  {
+   "fieldname": "source_details_section",
+   "fieldtype": "Section Break",
+   "label": "Source Details"
+  },
+  {
+   "fieldname": "farm_size",
+   "fieldtype": "Float",
+   "label": "Farm Size (Acres)"
+  },
+  {
+   "fieldname": "distance_from_store",
+   "fieldtype": "Float",
+   "label": "Distance from Store (km)"
+  },
+  {
+   "fieldname": "lead_time_days",
+   "fieldtype": "Int",
+   "label": "Lead Time (Days)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "organic_certified",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Organic Certified"
+  },
+  {
+   "depends_on": "organic_certified",
+   "fieldname": "certification_details",
+   "fieldtype": "Table",
+   "label": "Certification Details",
+   "options": "Source Certification"
+  },
+  {
+   "default": "0",
+   "fieldname": "preferred_supplier",
+   "fieldtype": "Check",
+   "label": "Preferred Supplier"
+  },
+  {
+   "fieldname": "supplier_rating",
+   "fieldtype": "Rating",
+   "label": "Supplier Rating"
+  },
+  {
+   "fieldname": "produce_section",
+   "fieldtype": "Section Break",
+   "label": "Produce"
+  },
+  {
+   "fieldname": "produce_items",
+   "fieldtype": "Table",
+   "label": "Produce Items",
+   "options": "Source Produce Item"
+  },
+  {
+   "fieldname": "seasonal_availability_section",
+   "fieldtype": "Section Break",
+   "label": "Seasonal Availability"
+  },
+  {
+   "fieldname": "available_from_month",
+   "fieldtype": "Select",
+   "label": "Available From Month",
+   "options": "January\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
+  },
+  {
+   "fieldname": "available_to_month",
+   "fieldtype": "Select",
+   "label": "Available To Month",
+   "options": "January\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
+  },
+  {
+   "fieldname": "seasonal_notes",
+   "fieldtype": "Small Text",
+   "label": "Seasonal Notes"
+  },
+  {
+   "fieldname": "additional_information_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
+  },
+  {
+   "fieldname": "sustainability_practices",
+   "fieldtype": "Small Text",
+   "label": "Sustainability Practices"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Attach",
+   "label": "Attachments"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-04-05 10:16:30",
+ "modified_by": "Administrator",
+ "module": "QFarmers POS",
+ "name": "Produce Source",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock User",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

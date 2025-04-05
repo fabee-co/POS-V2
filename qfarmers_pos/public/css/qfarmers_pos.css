@@ -1,0 +1,249 @@
+/* QFarmers POS CSS */
+
+.qf-pos-container {
+    display: flex;
+    height: calc(100vh - 170px);
+    overflow: hidden;
+}
+
+.qf-pos-items {
+    flex: 7;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f5f7fa;
+}
+
+.qf-pos-cart {
+    flex: 3;
+    border-left: 1px solid #d1d8dd;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.qf-pos-item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-gap: 15px;
+}
+
+.qf-pos-item {
+    border: 1px solid #d1d8dd;
+    border-radius: 5px;
+    padding: 10px;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.qf-pos-item:hover {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.qf-organic-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #7CFC00;
+    color: #006400;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.qf-freshness-indicator {
+    height: 4px;
+    width: 100%;
+    background: #f0f0f0;
+    margin-top: 5px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.qf-freshness-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #7CFC00, #32CD32);
+}
+
+.qf-freshness-low {
+    background: linear-gradient(90deg, #FFA500, #FF4500);
+}
+
+.qf-pos-item-name {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.qf-pos-item-price {
+    color: #1a1a1a;
+    margin-top: 3px;
+}
+
+.qf-pos-item-stock {
+    font-size: 11px;
+    color: #8d99a6;
+}
+
+.qf-pos-categories {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.qf-pos-category {
+    white-space: nowrap;
+    padding: 8px 15px;
+    margin-right: 10px;
+    background: white;
+    border: 1px solid #d1d8dd;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.qf-pos-category.active {
+    background: #5e64ff;
+    color: white;
+    border-color: #5e64ff;
+}
+
+.qf-pos-cart-header {
+    padding: 15px;
+    border-bottom: 1px solid #d1d8dd;
+}
+
+.qf-pos-cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 15px;
+}
+
+.qf-pos-cart-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+}
+
+.qf-pos-cart-item-details {
+    flex: 1;
+}
+
+.qf-pos-cart-item-name {
+    font-weight: bold;
+}
+
+.qf-pos-cart-item-price {
+    font-size: 12px;
+    color: #8d99a6;
+}
+
+.qf-pos-cart-item-qty {
+    display: flex;
+    align-items: center;
+}
+
+.qf-pos-cart-qty-btn {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #d1d8dd;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.qf-pos-cart-qty-input {
+    width: 35px;
+    text-align: center;
+    border: none;
+    outline: none;
+    margin: 0 5px;
+}
+
+.qf-pos-cart-footer {
+    padding: 15px;
+    border-top: 1px solid #d1d8dd;
+    background: #f5f7fa;
+}
+
+.qf-pos-cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.qf-pos-checkout-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.qf-pos-checkout-btn:hover {
+    background: #45a049;
+}
+
+/* Organic product styles */
+.qf-organic-product {
+    border-left: 3px solid #7CFC00;
+}
+
+/* Freshness level indicators */
+.qf-freshness-fresh {
+    color: #32CD32;
+}
+
+.qf-freshness-good {
+    color: #7CFC00;
+}
+
+.qf-freshness-fair {
+    color: #FFA500;
+}
+
+.qf-freshness-poor {
+    color: #FF4500;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+    .qf-pos-container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .qf-pos-items, .qf-pos-cart {
+        flex: none;
+        width: 100%;
+    }
+    
+    .qf-pos-cart {
+        height: 300px;
+        border-left: none;
+        border-top: 1px solid #d1d8dd;
+    }
+}
+
+/* Touch-friendly adjustments for mobile */
+@media (max-width: 767px) {
+    .qf-pos-item-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+    
+    .qf-pos-cart-qty-btn {
+        width: 30px;
+        height: 30px;
+    }
+}

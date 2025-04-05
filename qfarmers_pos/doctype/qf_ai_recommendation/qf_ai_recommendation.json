@@ -1,0 +1,138 @@
+{
+    "doctype": "DocType",
+    "name": "QF AI Recommendation",
+    "owner": "Administrator",
+    "module": "QFarmers POS",
+    "custom": 1,
+    "autoname": "field:recommendation_id",
+    "allow_rename": 0,
+    "engine": "InnoDB",
+    "fields": [
+        {
+            "fieldname": "recommendation_id",
+            "fieldtype": "Data",
+            "label": "Recommendation ID",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "customer",
+            "fieldtype": "Link",
+            "label": "Customer",
+            "options": "Customer",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "generation_date",
+            "fieldtype": "Date",
+            "label": "Generation Date",
+            "reqd": 1,
+            "default": "Today",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "recommendation_type",
+            "fieldtype": "Select",
+            "label": "Recommendation Type",
+            "options": "Weekly\nSeasonal\nPersonalized\nSpecial Offer",
+            "reqd": 1,
+            "default": "Weekly"
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Active\nExpired\nConverted",
+            "reqd": 1,
+            "default": "Active"
+        },
+        {
+            "fieldname": "recommended_products_section",
+            "fieldtype": "Section Break",
+            "label": "Recommended Products"
+        },
+        {
+            "fieldname": "recommended_products",
+            "fieldtype": "Table",
+            "label": "Recommended Products",
+            "options": "QF Recommended Product",
+            "reqd": 1
+        },
+        {
+            "fieldname": "algorithm_section",
+            "fieldtype": "Section Break",
+            "label": "Algorithm Details"
+        },
+        {
+            "fieldname": "algorithm_used",
+            "fieldtype": "Select",
+            "label": "Algorithm Used",
+            "options": "Collaborative Filtering\nContent-Based\nHybrid\nSeasonal Analysis",
+            "default": "Hybrid"
+        },
+        {
+            "fieldname": "confidence_score",
+            "fieldtype": "Percent",
+            "label": "Confidence Score",
+            "default": 80
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "data_points_used",
+            "fieldtype": "Int",
+            "label": "Data Points Used"
+        },
+        {
+            "fieldname": "algorithm_notes",
+            "fieldtype": "Small Text",
+            "label": "Algorithm Notes"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 0,
+            "cancel": 0,
+            "amend": 0
+        },
+        {
+            "role": "QFarmers Store Manager",
+            "read": 1,
+            "write": 0,
+            "create": 0,
+            "delete": 0,
+            "submit": 0,
+            "cancel": 0,
+            "amend": 0
+        }
+    ],
+    "creation": "2025-04-05 14:43:35",
+    "modified": "2025-04-05 14:43:35",
+    "modified_by": "Administrator",
+    "idx": 0,
+    "is_submittable": 0,
+    "istable": 0,
+    "editable_grid": 1,
+    "track_changes": 1,
+    "track_seen": 0,
+    "quick_entry": 0,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "max_attachments": 0,
+    "hide_toolbar": 0,
+    "allow_copy": 0,
+    "allow_import": 1,
+    "allow_events_in_timeline": 0,
+    "allow_auto_repeat": 0,
+    "show_name_in_global_search": 0,
+    "show_preview_popup": 0
+}

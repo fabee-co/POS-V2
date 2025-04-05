@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:certification_name",
+ "creation": "2025-04-05 10:15:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "certification_name",
+  "certification_authority",
+  "certification_standard",
+  "certification_description",
+  "validity_section",
+  "valid_from",
+  "valid_till",
+  "is_active",
+  "certification_details_section",
+  "certification_criteria",
+  "certification_logo",
+  "display_in_pos"
+ ],
+ "fields": [
+  {
+   "fieldname": "certification_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Certification Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "certification_authority",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Certification Authority",
+   "reqd": 1
+  },
+  {
+   "fieldname": "certification_standard",
+   "fieldtype": "Data",
+   "label": "Certification Standard",
+   "reqd": 1
+  },
+  {
+   "fieldname": "certification_description",
+   "fieldtype": "Text Editor",
+   "label": "Certification Description"
+  },
+  {
+   "fieldname": "validity_section",
+   "fieldtype": "Section Break",
+   "label": "Validity"
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Valid From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "valid_till",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Valid Till",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "certification_details_section",
+   "fieldtype": "Section Break",
+   "label": "Certification Details"
+  },
+  {
+   "fieldname": "certification_criteria",
+   "fieldtype": "Table MultiSelect",
+   "label": "Certification Criteria",
+   "options": "Certification Criteria"
+  },
+  {
+   "fieldname": "certification_logo",
+   "fieldtype": "Attach Image",
+   "label": "Certification Logo"
+  },
+  {
+   "default": "1",
+   "fieldname": "display_in_pos",
+   "fieldtype": "Check",
+   "label": "Display in POS"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-04-05 10:15:00",
+ "modified_by": "Administrator",
+ "module": "QFarmers POS",
+ "name": "Organic Certification",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
