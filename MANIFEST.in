@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include qfarmers_pos *.css
+recursive-include qfarmers_pos *.csv
+recursive-include qfarmers_pos *.html
+recursive-include qfarmers_pos *.ico
+recursive-include qfarmers_pos *.js
+recursive-include qfarmers_pos *.json
+recursive-include qfarmers_pos *.md
+recursive-include qfarmers_pos *.png
+recursive-include qfarmers_pos *.py
+recursive-include qfarmers_pos *.svg
+recursive-include qfarmers_pos *.txt
+recursive-exclude qfarmers_pos *.pyc
